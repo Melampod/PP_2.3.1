@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Create user</title>
+
+
+</head>
+<body>
+<h2>Employee info</h2>
+<br>
+
+<form action="#" th:action="@{/saveUser}" th:object="${user}" method="post">
+
+  <input type="hidden" th:value="${user.id}" th:attr=" name='id'" />
+
+  <label for="firstName">First name</label>
+  <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+
+  <label for="lastName">Last name</label>
+  <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+
+  <label for="age">Age</label>
+    <input type="text" th:field="*{age}" id="age" placeholder="Age">
+
+  <label for="email">Email</label>
+  <input type="text" th:field="*{email}" id="email" placeholder="Email">
+
+
+  <input type="submit" value="Save User">
+</form>
+</body>
